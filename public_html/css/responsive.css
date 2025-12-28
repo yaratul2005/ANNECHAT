@@ -1,0 +1,219 @@
+/* Mobile First Approach */
+
+/* Mobile (320px - 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: var(--space-md);
+    }
+
+    .auth-card {
+        padding: var(--space-lg);
+    }
+
+    .chat-layout {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .users-sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        border-right: none;
+        transform: translateX(0);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .users-sidebar.mobile-hidden {
+        transform: translateX(-100%);
+    }
+
+    .chat-main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        transform: translateX(0);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .chat-main.mobile-hidden {
+        transform: translateX(100%);
+    }
+
+    .message {
+        max-width: 85%;
+    }
+
+    .chat-header {
+        flex-direction: row;
+        gap: var(--space-sm);
+        align-items: center;
+        padding: var(--space-sm) var(--space-md);
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .chat-header h1 {
+        flex: 0 0 auto;
+        font-size: var(--font-size-lg);
+    }
+
+    .stories-carousel-container {
+        order: 3;
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: var(--space-xs) var(--space-sm);
+        margin: var(--space-xs) 0;
+        border-top: 1px solid var(--color-bg-tertiary);
+        border-bottom: 1px solid var(--color-bg-tertiary);
+    }
+
+    .add-story-btn {
+        width: 90px;
+        height: 90px;
+    }
+
+    .story-circle-item {
+        flex: 0 0 70px;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .story-viewer-container {
+        max-height: 100vh;
+    }
+    
+    .story-viewer-nav {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .story-viewer-nav svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .user-info {
+        margin-left: auto;
+        flex: 0 0 auto;
+    }
+
+    .user-icon-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .user-profile-dropdown {
+        right: 0;
+        left: auto;
+    }
+
+    .user-profile-card {
+        padding: var(--space-md);
+        min-width: 240px;
+    }
+
+    .user-avatar-header {
+        width: 40px;
+        height: 40px;
+    }
+
+    .user-name-header {
+        font-size: var(--font-size-sm);
+    }
+
+    .btn-logout {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .mobile-users-btn,
+    .mobile-back-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        color: var(--color-text-primary);
+        cursor: pointer;
+        border-radius: var(--radius-md);
+        transition: background-color 0.2s ease;
+    }
+
+    .mobile-users-btn:hover,
+    .mobile-back-btn:hover {
+        background-color: var(--color-bg-tertiary);
+    }
+
+    .mobile-users-btn svg,
+    .mobile-back-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Mobile (320px - 479px) */
+@media (max-width: 479px) {
+    .message {
+        max-width: 90%;
+    }
+
+    .chat-header h1 {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* Tablet (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .users-sidebar {
+        width: 280px;
+    }
+
+    .message {
+        max-width: 75%;
+    }
+}
+
+/* Desktop (768px+) */
+@media (min-width: 769px) {
+    .chat-layout {
+        flex-direction: row;
+    }
+
+    .users-sidebar {
+        position: relative;
+        width: 300px;
+        transform: none !important;
+    }
+
+    .chat-main {
+        position: relative;
+        transform: none !important;
+    }
+
+    .mobile-users-btn,
+    .mobile-back-btn {
+        display: none !important;
+    }
+}
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .users-sidebar {
+        width: 350px;
+    }
+}
+

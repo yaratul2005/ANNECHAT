@@ -1,0 +1,5 @@
+# Prevent script execution
+php_flag engine off
+AddHandler cgi-script .php .pl .py .jsp .asp .sh .cgi
+Options -ExecCGI
+

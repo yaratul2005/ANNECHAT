@@ -1,0 +1,33 @@
+/* Fallback styles in case CSS variables fail to load */
+/* This ensures the page is always visible */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #0f0f0f;
+    min-height: 100vh;
+}
+
+/* Ensure all main containers are visible */
+.chat-container,
+.container,
+.auth-container {
+    background-color: #0f0f0f;
+    min-height: 100vh;
+}
+

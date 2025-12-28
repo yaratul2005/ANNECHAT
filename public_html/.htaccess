@@ -1,0 +1,44 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect /admin to admin-login.php
+RewriteRule ^admin/?$ admin-login.php [L]
+
+# Redirect /admin/dashboard to admin-dashboard.php
+RewriteRule ^admin/dashboard/?$ admin-dashboard.php [L]
+
+# Security: Block access to sensitive files
+<FilesMatch "^(\.htaccess|\.git|composer\.(json|lock)|package\.json|\.env|bootstrap\.php|\.gitignore)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Enable compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
