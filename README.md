@@ -2,6 +2,8 @@
 
 A modern, secure, real-time chat application built with PHP 8.0+, MySQL 8.0, and vanilla JavaScript. Designed for shared hosting environments.
 
+![ANNE CHAT](https://yaratul.com/wp-content/uploads/2025/12/Gemini_Generated_Image_t3cjqet3cjqet3cj.png)
+
 ## Features
 
 - **Multi-tier Authentication**: Guest users, registered users (verified/unverified), and admin users
